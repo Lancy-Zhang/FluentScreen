@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "FluentScreen 字幕学习助手",
+  "version": "1.5.0",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2nzRPHKbWfFrYhVY5N9P2EeAj5JrGyDEh4D71f87wzHZ7TA5nH6GX/Qymiba1zSgnW/yAwcJ5CGkrFzpncRibrp+N296+2rrvWUqcPmv6jLcE8XlzfUJzME9Lt6Yq689bmZn43BFfkyEuNwZ5RKbTLKW4xjtFUA4pgrbVmVtlPdWonEs/ZoyeWIv8tB4C4V9N0FeiL7YBnhbldx7pH/5R6sf9ozqt+AqQGTKQHISMYMFAE94TDe+4YyZea1X4pP4BDCqkyj6zHJYhxKefDCwV+7qb4Hys0wxVWNfhphADBhUwxearFjtLmZkL4hQawjdtz+kd0P58dZwkenT4lH8wQIDAQAB",
+  "description": "在 YouTube、Bilibili 和 Kubb 播放时自动收集字幕，并在侧边栏进行逐句和单词学习。",
+  "permissions": ["sidePanel", "storage", "activeTab", "tabs", "nativeMessaging"],
+  "content_security_policy": { "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'" },
+  "host_permissions": ["<all_urls>", "http://127.0.0.1/*"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [{
+    "matches": ["https://www.youtube.com/*", "https://www.bilibili.com/*", "https://www.kubb.tv/*", "https://kubb.tv/*"],
+    "js": ["shared.js", "content.js"],
+    "run_at": "document_idle"
+  }],
+  "web_accessible_resources": [{
+    "resources": ["vendor/worker.min.js", "vendor/core/*", "vendor/lang/*"],
+    "matches": ["<all_urls>"]
+  }],
+  "side_panel": { "default_path": "panel.html" },
+  "action": { "default_title": "打开 FluentScreen 字幕学习" }
+}

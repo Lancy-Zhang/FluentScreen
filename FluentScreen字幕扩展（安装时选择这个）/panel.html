@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FluentScreen</title><link rel="stylesheet" href="panel.css"></head>
+<body>
+  <header><div class="logo">F</div><div><strong>FluentScreen</strong><span>字幕学习助手</span></div><button id="wordsTab">生词本 <i id="wordCount">0</i></button></header>
+  <main>
+    <section id="status" class="status"><div><b id="statusTitle">正在连接视频…</b><span id="statusText">请打开视频并开启字幕</span></div><div class="statusButtons"><button id="ocrToggle" class="hidden">识别画面字幕</button><button id="adjustRegion" class="hidden">调整识别区域</button><button id="favoriteEpisode" class="hidden">☆ 收藏本集</button><button id="followToggle">自动跟随：开</button></div></section>
+    <section id="ocrStatus" class="ocrStatus hidden">正在连接 Apple Vision…</section>
+    <section id="empty" class="empty"><div>CC</div><h2>等待视频字幕</h2><p>支持 YouTube、Bilibili 和 Kubb。Kubb 使用本机 Apple Vision 自动识别对白字幕。</p><small>请先双击打开“FluentScreen Vision”，识别内容不会上传到外部服务器。</small></section>
+    <section id="cueList" class="cueList"></section>
+    <section id="wordBook" class="wordBook hidden"></section>
+  </main>
+  <aside id="drawer" class="drawer hidden"><button id="closeDrawer">×</button><label>WORD EXPLAINER</label><h2 id="drawerWord"></h2><div id="drawerMeta"></div><h3>释义</h3><p id="drawerMeaning"></p><h3>当前句</h3><p id="drawerExample"></p><button id="saveWord">☆ 收藏到生词本</button></aside>
+  <script src="shared.js"></script><script src="vendor/tesseract.min.js"></script><script src="panel.js"></script>
+</body></html>

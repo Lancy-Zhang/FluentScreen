@@ -1,0 +1,9 @@
+.DS_Store
+build/
+dist/
+*.pem
+*.key
+FluentScreen Vision.app/
+打开 FluentScreen.app/
+FluentScreen字幕扩展（安装时选择这个）/vendor/
+

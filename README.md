@@ -36,6 +36,8 @@ OCR screenshots are processed locally on the user's Mac and are not saved by Flu
 
 Download `FluentScreen-1.5.0-macOS.dmg` from Releases and follow the [installation guide](docs/INSTALL.md). The free build is unsigned, so macOS may ask you to right-click the installer and choose **Open**.
 
+The DMG contains the bundled third-party OCR runtime and Chinese language model. Those generated/vendor assets are intentionally excluded from the source repository; the product source, tests, native helper, and packaging scripts remain public here.
+
 ## Current limitations
 
 - macOS is required for Apple Vision OCR.
